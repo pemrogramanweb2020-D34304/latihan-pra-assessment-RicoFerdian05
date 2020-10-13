@@ -24,7 +24,9 @@
           <th><b>Stok</b></th>
           </thead>";
     
+    $totalbuku = 0;
     for($x=0;$x<count($buku);$x++){
+	$totalbuku = $totalbuku + $buku[$x]['stok'];
         echo "<tr>";
         echo "<td>".$buku[$x]['judul']."</td>";
         echo "<td>".$buku[$x]['pengarang']."</td>";  
@@ -32,7 +34,9 @@
         echo "<td>".$buku[$x]['stok']."</td>";  
         echo "</tr>";
     }
-    
+    echo "<tr>";
+    echo "<td colspan='3'><b>Total Buku</b></td>";
+    echo "<td>".$totalbuku."</td>";
     echo "</table>";
     echo "<table border=0 cellpadding=8>
           <tr><td></td></tr>   
